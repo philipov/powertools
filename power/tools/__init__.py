@@ -6,7 +6,7 @@ General-purpose Utility Library
 __setup__ = dict(
     name='powertools',
     packages=['power.tools',  'power.test'],
-    version='0.0.0',
+    version='0.0.1',
     description=__doc__,
 
     url='https://github.com/philipov/powertools',
