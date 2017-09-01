@@ -1,5 +1,5 @@
 #-- power.tools
-"""--- Power.tools
+"""--- Power.Tools
 General-purpose Utility Library
 """
 

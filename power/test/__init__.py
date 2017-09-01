@@ -1,8 +1,7 @@
 #-- power.test.__init__
 
-"""--- Power.test
-Extra tools for testing
+"""--- Power.Test
+fixtures and test utilities
 """
 
 
-from ..tools import *
