@@ -1,6 +1,7 @@
 #-- power.tools
-"""--- Power.Tools
-General-purpose Utility Library
+
+"""--- power.tools and power.test
+general-purpose utility and testing library
 """
 
 __setup__ = dict(
