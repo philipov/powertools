@@ -1,6 +1,6 @@
-#-- powertools.pkg
+#-- powertools.pip
 
-''' packaging utilities
+''' pip/setuptools utilities
 '''
 
 
