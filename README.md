@@ -21,7 +21,6 @@ utilities to support setuptools
 
 ---
 ##### `powertools.print`
-pretty printers
 - custom hook into `pprint` and `pformat`
 - `add_pprint` registers a class's \_\_pprint\_\_ method as a pretty printer
 - `dictprint` - print a dict when pprint isn't working
@@ -31,9 +30,9 @@ pretty printers
 
 ---
 ##### `powertools.term`
-ansi color for terminal output
-- `white`, `red`, `green`, `blue`, `pink`, `yellow`, `cyan`
-- `dwhite`, `dred`, `dgreen`, `dblue`, `dpink`, `dyellow`, `dcyan`
+- ansi color for terminal output
+  - `white`, `red`, `green`, `blue`, `pink`, `yellow`, `cyan`
+  - `dwhite`, `dred`, `dgreen`, `dblue`, `dpink`, `dyellow`, `dcyan`
 
 all of these take *args, stringify it, join with '', add ansi codes, and return the string for printing
 
