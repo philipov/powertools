@@ -2,7 +2,7 @@
 #-- setup.py -- powertools
 
 from setuptools import setup
-from power.tools import __setup__
-setup(**__setup__)
+from powertools.setup.arguments import kwargs
+setup( **kwargs )
 
 #----------------------------------------------------------------------#

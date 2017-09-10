@@ -1,24 +1,27 @@
-#-- power.tools
+#-- powertools.setup.arguments
 
-"""--- power.tools and power.test
-general-purpose utility and testing library
-"""
+'''
+package arguments
+'''
 
-__setup__ = dict(
-    name='powertools',
-    packages=['power.tools',  'power.test'],
-    version='0.0.1',
-    description=__doc__,
+from copy import deepcopy
+#----------------------------------------------------------------------#
 
-    url='https://github.com/philipov/powertools',
-    author='Philip Loguinov',
+kwargs = dict(
+    name        ='powertools',
+    packages    =['powertools', 'powertools.setup'],
+    version     ='0.0.1',
+    description =__doc__,
+
+    url         ='https://github.com/philipov/powertools',
+    author      ='Philip Loguinov',
     author_email='philipov@gmail.com',
-
 
     requires=[
         'pytest',
         'colored_traceback',
         'colorama',
+        'coloredlogs',
         'termcolor'
     ],
     classifiers=[
@@ -40,6 +43,10 @@ __setup__ = dict(
     ]
 )
 
-__version__ = __setup__['version']
+test_kwargs   = deepcopy( kwargs )
+dev_kwargs    = deepcopy( test_kwargs )
 
-__test_setup__ = __setup__
+__version__ = kwargs['version']
+
+
+#----------------------------------------------------------------------#
