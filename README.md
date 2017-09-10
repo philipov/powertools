@@ -34,7 +34,7 @@ utilities to support setuptools
   - `white`, `red`, `green`, `blue`, `pink`, `yellow`, `cyan`
   - `dwhite`, `dred`, `dgreen`, `dblue`, `dpink`, `dyellow`, `dcyan`
 
-all of these take *args, stringify it, join with '', add ansi codes, and return the string for printing
+all of these take *args, stringify them, join over '', add ansi codes, and return a single string for printing
 
 
 ---
