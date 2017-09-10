@@ -1,7 +1,8 @@
 
 ---
 ##### `powertools.export`
-- `export` decorator - add an object to its module's \_\_all\_\_ attribute, creating it if it doesn't exist. Used to support `from module import *` syntax.
+- `export` decorator - add an object to its module's \_\_all\_\_ attribute, creating it if it doesn't exist. 
+  - Used to support `from module import *` syntax.
 
 
 ---
