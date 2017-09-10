@@ -17,8 +17,8 @@
 
 
 ---
-##### `powertools.strap`
-utilities to support setuptools
+##### `powertools.pip`
+recipes for pip/setuptools
 
 
 ---
