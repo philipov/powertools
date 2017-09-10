@@ -1,7 +1,7 @@
 
 ---
 ##### `powertools.export`
-- `export` decorator - uses stack frame inspection to add an object to a module's \_\_all\_\_ attribute, creating it if it doesn't exist
+- `export` decorator - add an object to its module's \_\_all\_\_ attribute, creating it if it doesn't exist. Used to support `from module import *` syntax.
 
 
 ---
