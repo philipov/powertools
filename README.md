@@ -7,7 +7,8 @@
 
 ---
 ##### `powertools.logging`
-- `AutoLogger` class provides a recipe that automatically initialises a logger with color support, stack depth indentation, and a context manager to enable debug output
+- `AutoLogger` class provides a recipe that automatically initialises a logger with color support and stack depth indentation.
+  - 'Autologger.setdebug' context manager property turns on debug output during scope
 
 
 ---
