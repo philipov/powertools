@@ -2,7 +2,7 @@
 
 ---
 ##### export
-- `export` decorator - uses stack frame inspection to add an object to a module's \_\_all\_\_, creating it if it doesn't exist
+- `export` decorator - uses stack frame inspection to add an object to a module's \_\_all\_\_ attribute, creating it if it doesn't exist
 
 
 ---
