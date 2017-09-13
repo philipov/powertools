@@ -63,6 +63,7 @@ class AutoLogger :
 
 
     def _print( self, loglevel, *args, stackpop=0, add_indent=False, clean=False) :
+        # print('self', self)
         stackdepth  = len(getouterframes( currentframe())) - stackpop - self._base_depth
         frameinfo   = getouterframes( currentframe( ) )[1 + stackpop]
         frame       = frameinfo.frame
@@ -103,11 +104,13 @@ class AutoLogger :
             self.logger = logger
 
         def __enter__(self):
-            self.logger.setLevel( logging.DEBUG )
+            for logger in logging.Logger.manager.loggerDict:
+                logger.setLevel( logging.DEBUG )
+
 
         def __exit__(self, exc_type, exc_value, traceback ):
-            self.logger.setLevel( logging.INFO )
-
+            for logger in logging.Logger.manager.loggerDict :
+                logger.setLevel( logging.INFO)
 
     @property
     def setdebug( self ) :

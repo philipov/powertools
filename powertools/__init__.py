@@ -11,5 +11,7 @@ from .export import export
 
 from .logging import AutoLogger
 
+from .meta import classproperty
+
 
 #----------------------------------------------------------------------#

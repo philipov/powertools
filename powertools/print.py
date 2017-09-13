@@ -21,7 +21,7 @@ def add_pprint(cls):
 #ToDo: 'tprint' - write to multiple streams
 
 def dictprint( d ) :
-    list( print( key, ':', value ) for key, value in d.items( ) )
+    list( print( '{:<12}:'.format(str(key)), value ) for key, value in d.items( ) )
 
 def listprint( l ) :
     list( print( value ) for value in l )
@@ -43,7 +43,7 @@ def rprint( struct, i=0, quiet=False ) :
 
     elif isinstance( struct, dict ) : # loop over dict
         for (key, value) in struct.items( ) :
-            line = ' '*i + "" + str( key ) + ": "
+            line = ' '*i + "{:<12}: ".format(str(key))
             result += line
             print( line, end='' ) if quiet is False else None
 
