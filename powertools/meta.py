@@ -6,10 +6,11 @@ higher order functions
 
 # todo: decorator that adds local variables in a function call as attributes of its object
 
-import sys
-from pprint import pprint
-import traceback
+# import sys
+# from pprint import pprint
+# import traceback
 
+from contextlib import contextmanager
 
 #----------------------------------------------------------------------#
 
@@ -47,8 +48,6 @@ def classproperty( func ) :
 
 #----------------------------------------------------------------------#
 
-from contextlib import contextmanager
-import sys
 
 @contextmanager
 def assertion(exception:Exception):
