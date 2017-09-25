@@ -10,14 +10,16 @@ general-purpose utility and testing library
 
 from .setup.arguments import __version__
 
-from .export import export          # decorator
+from .export import export              # decorator
 
-from .meta import name, qualname    # object magic
-from .meta import GreedyOrderedSet  # data structure
-from .meta import classproperty     # decorator
-from .meta import assertion         # context manager
+from .std import name, qualname         # functions
 
-from .logging import AutoLogger     # class
+from .struct import GreedyOrderedSet    # data structure
+
+from .meta import classproperty         # decorator
+from .meta import assertion             # context manager
+
+from .logging import AutoLogger         # module utility class
 
 
 #----------------------------------------------------------------------#
