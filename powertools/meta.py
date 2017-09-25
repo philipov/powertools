@@ -4,6 +4,12 @@
 higher order functions
 """
 
+# todo: decorator that adds local variables in a function call as attributes of its object
+
+import sys
+from pprint import pprint
+import traceback
+
 
 #----------------------------------------------------------------------#
 
@@ -37,6 +43,23 @@ def classproperty( func ) :
         func = classmethod( func )
 
     return ClassPropertyDescriptor( func )
+
+
+#----------------------------------------------------------------------#
+
+from contextlib import contextmanager
+import sys
+
+@contextmanager
+def assertion(exception:Exception):
+    '''raise exception as if it came from the original assert statement'''
+    try:
+        yield
+    except AssertionError as e:
+        #tb = sys.exc_info()[2]
+
+        #traceback.print_tb(tb)
+        raise exception from None
 
 
 #----------------------------------------------------------------------#

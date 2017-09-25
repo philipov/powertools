@@ -80,7 +80,7 @@ class AutoLogger :
                 *((
                     loglevel, ':', ' ' * (7 - len( loglevel )),
                     term.red( stackdepth * '--->' if add_indent else '' ),
-                    term.white(self.name,'.'), term.dgreen(qualname), term.white( ":: "),
+                    term.white(self.name,'.'), term.dcyan(qualname), term.white( ":: "),
                   ) if not clean else ()),
 
                 *args
@@ -93,6 +93,7 @@ class AutoLogger :
 
     print       = partialmethod( _print, 'INFO', clean=True)
     info        = partialmethod( _print, 'INFO' )
+    dinfo       = partialmethod( _print, 'INFO', add_indent=True )
     debug       = partialmethod( _print, 'DEBUG', add_indent=True )
 
 

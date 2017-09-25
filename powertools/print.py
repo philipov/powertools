@@ -21,7 +21,7 @@ def add_pprint(cls):
 #ToDo: 'tprint' - write to multiple streams
 
 def dictprint( d ) :
-    list( print( '{:<12}:'.format(str(key)), value ) for key, value in d.items( ) )
+    list( print( f'{str(key):<12}:', value ) for key, value in d.items( ) )
 
 def listprint( l ) :
     list( print( value ) for value in l )
