@@ -42,6 +42,9 @@ levels = dict(
 
 #-------------------------------------------------------------------------------------------------#
 
+loggers = lambda: map( logging.getLogger, logging.Logger.manager.loggerDict )
+
+
 @export
 class AutoLogger :
     ''' automatically set the name of the logger to the instance's module.
@@ -97,6 +100,14 @@ class AutoLogger :
     debug       = partialmethod( _print, 'DEBUG', add_indent=True )
 
 
+    def setDebug(self, level):
+        for logger in loggers() :
+            logger.setLevel( logging.DEBUG )
+
+    def setInfo( self, level ) :
+        for logger in loggers() :
+            logger.setLevel( logging.INFO )
+
     #################
     class _setdebug:
         ''' temporarily enable debug messages for all loggers during context
@@ -105,12 +116,12 @@ class AutoLogger :
             self.logger = logger
 
         def __enter__(self):
-            for logger in logging.Logger.manager.loggerDict:
+            for logger in loggers():
                 logger.setLevel( logging.DEBUG )
 
 
         def __exit__(self, exc_type, exc_value, traceback ):
-            for logger in logging.Logger.manager.loggerDict :
+            for logger in loggers():
                 logger.setLevel( logging.INFO)
 
     @property

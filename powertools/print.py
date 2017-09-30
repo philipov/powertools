@@ -18,44 +18,49 @@ def add_pprint(cls):
 
 #-------------------------------------------------------------------------------------------------#
 
+from collections import namedtuple
+
 #ToDo: 'tprint' - write to multiple streams
 
-def dictprint( d ) :
-    list( print( f'{str(key):<12}:', value ) for key, value in d.items( ) )
+def dictprint( d, pfunc=print ) :
+    list( pfunc( f'{str(key):<12}:', value ) for key, value in d.items( ) )
 
-def listprint( l ) :
-    list( print( value ) for value in l )
+def listprint( l, pfunc=print ) :
+    list( pfunc( value ) for value in l )
 
-def rprint( struct, i=0, quiet=False ) :
+def rprint( struct, i=0, quiet=False, pfunc=print ) :
     #ToDo: return a string
 
     result = ""
-    if isinstance( struct, list ) : # loop over list
+    if isinstance( struct, list ) \
+    or isinstance( struct, tuple):  # loop over list/tuple
         for value in struct :
-            if isinstance( value, dict ) \
-                    or isinstance( value, list ) : # recurse on subsequence
+            if isinstance( value, dict  ) \
+            or isinstance( value, list  ) \
+            or isinstance( value, tuple ) : # recurse on subsequence
                 result += rprint( value, i + 2, quiet )
 
             else :
                 line = ' '*i + "- " + str( value )
                 result += line + "\n"
-                print( line ) if quiet is False else None
+                pfunc( line ) if quiet is False else None
 
     elif isinstance( struct, dict ) : # loop over dict
         for (key, value) in struct.items( ) :
-            line = ' '*i + "{:<12}: ".format(str(key))
+            line = ' '*i + "{:<12} ".format(str(key)+':')
             result += line
-            print( line, end='' ) if quiet is False else None
+            pfunc( line, end='' ) if quiet is False else None
 
-            if isinstance( value, dict ) \
-                    or isinstance( value, list ) : # recurse on subsequence
-                print( "" ) if quiet is False else None
+            if isinstance( value, dict  ) \
+            or isinstance( value, list  ) \
+            or isinstance( value, tuple ) : # recurse on subsequence
+                pfunc( "" ) if quiet is False else None
                 result += "\n"
                 result += rprint( value, i + 2, quiet )
 
             else :
                 result += str( value ) + "\n"
-                print( str( value ) ) if quiet is False else None
+                pfunc( str( value ) ) if quiet is False else None
 
     return result
 
