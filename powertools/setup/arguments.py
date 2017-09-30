@@ -8,10 +8,11 @@ from copy import deepcopy
 #----------------------------------------------------------------------#
 
 kwargs = dict(
-    name        ='powertools',
-    packages    =['powertools', 'powertools.setup'],
-    version     ='0.0.1',
-    description =__doc__,
+    name        = 'powertools',
+    packages    = ['powertools', 'powertools.setup'],
+    version     = '0.0.2',
+    description = __doc__,
+    license     = "MIT License",
 
     url         ='https://github.com/philipov/powertools',
     author      ='Philip Loguinov',
