@@ -1,7 +1,7 @@
 #-- powertools.setup.arguments
 
 '''
-package arguments
+another standard library extension
 '''
 
 from copy import deepcopy
@@ -17,7 +17,7 @@ kwargs = dict(
     author      ='Philip Loguinov',
     author_email='philipov@gmail.com',
 
-    requires=[
+    install_requires=[
         'pytest',
         'colored_traceback',
         'colorama',
