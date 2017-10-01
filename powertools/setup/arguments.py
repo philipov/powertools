@@ -10,7 +10,7 @@ from copy import deepcopy
 kwargs = dict(
     name        = 'powertools',
     packages    = ['powertools', 'powertools.setup'],
-    version     = '0.0.2',
+    version     = '0.0.3',
     description = __doc__,
     license     = "MIT License",
 
@@ -18,6 +18,9 @@ kwargs = dict(
     author      ='Philip Loguinov',
     author_email='philipov@gmail.com',
 
+    zip_safe                = True,
+    include_package_data    = True,
+    
     install_requires=[
         'pytest',
         'colored_traceback',
