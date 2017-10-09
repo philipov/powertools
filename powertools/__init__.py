@@ -4,7 +4,7 @@
 general-purpose utility and testing library
 """
 
-#----------------------------------------------------------------------#
+#----------------------------------------------------------------------------------------------#
 
 # todo: metaclass that allows composition of classes using the | operator
 
@@ -22,4 +22,4 @@ from .meta import assertion             # context manager
 from .logging import AutoLogger         # module utility class
 
 
-#----------------------------------------------------------------------#
+#----------------------------------------------------------------------------------------------#

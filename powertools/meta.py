@@ -12,7 +12,7 @@ higher order functions
 
 from contextlib import contextmanager
 
-#----------------------------------------------------------------------#
+#----------------------------------------------------------------------------------------------#
 
 # https://stackoverflow.com/questions/5189699/how-to-make-a-class-property
 class ClassPropertyDescriptor( object ) :
@@ -46,7 +46,7 @@ def classproperty( func ) :
     return ClassPropertyDescriptor( func )
 
 
-#----------------------------------------------------------------------#
+#----------------------------------------------------------------------------------------------#
 
 
 @contextmanager
@@ -61,4 +61,4 @@ def assertion(exception:Exception):
         raise exception from None
 
 
-#----------------------------------------------------------------------#
+#----------------------------------------------------------------------------------------------#

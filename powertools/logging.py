@@ -65,7 +65,7 @@ class AutoLogger :
         coloredlogs.install(logger=self.logger, fmt='%(message)s', level=logging.DEBUG)
 
 
-    def _print( self, loglevel, *args, stackpop=0, add_indent=False, clean=False) :
+    def _print( self, loglevel, *args, stackpop=0, add_indent=False, clean=False, **kwargs) :
         # print('self', self)
         stackdepth  = len(getouterframes( currentframe())) - stackpop - self._base_depth
         frameinfo   = getouterframes( currentframe( ) )[1 + stackpop]
@@ -87,8 +87,8 @@ class AutoLogger :
                   ) if not clean else ()),
 
                 *args
-            ])
-        )
+            ]),
+        **kwargs)
 
     critical    = partialmethod( _print, 'FATAL')
     error       = partialmethod( _print, 'ERROR' )

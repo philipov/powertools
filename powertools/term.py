@@ -6,7 +6,7 @@ terminal colors
 from termcolor import colored
 from functools import partial
 
-#----------------------------------------------------------------------#
+#----------------------------------------------------------------------------------------------#
 
 cprint = lambda color, *args, bold=True,: (
     colored(
@@ -34,7 +34,7 @@ dyellow = partial( cprint, 'yellow',    bold=False )
 dcyan   = partial( cprint, 'cyan',      bold=False )
 
 
-#----------------------------------------------------------------------#
+#----------------------------------------------------------------------------------------------#
 
 def init_color():
     ''' encapsulate terminal color configuration so it could be more easily turned off if necessary
@@ -46,7 +46,7 @@ def init_color():
 
     ###
     import colored_traceback
-    colored_traceback.add_hook( style='light' )
+    colored_traceback.add_hook( style='dark' )
 
 
-#----------------------------------------------------------------------#
+#----------------------------------------------------------------------------------------------#

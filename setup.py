@@ -10,4 +10,4 @@ with open( os.path.join( os.path.dirname( __file__ ), 'DESCRIPTION.rst' ) ) as r
 
 setup( **kwargs, long_description=long_description )
 
-#----------------------------------------------------------------------#
+#----------------------------------------------------------------------------------------------#

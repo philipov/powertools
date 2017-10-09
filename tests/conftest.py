@@ -18,7 +18,7 @@ import logging
 logging.basicConfig(level=logging.DEBUG)
 log = logging.getLogger('conftest')
 
-#----------------------------------------------------------------------#
+#----------------------------------------------------------------------------------------------#
 
 def prepare_testdata( path_destination:Path ):
     testdata_source = Path(__file__).parents[0] / 'testdata'
@@ -60,4 +60,4 @@ def path_testdata( tmpdir_factory ):
     shutil.copytree( str(testenv_path), str(backup_path) )
 
 
-#----------------------------------------------------------------------#
+#----------------------------------------------------------------------------------------------#
