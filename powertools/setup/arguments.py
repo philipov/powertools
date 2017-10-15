@@ -10,7 +10,7 @@ from copy import deepcopy
 kwargs = dict(
     name        = 'powertools',
     packages    = ['powertools', 'powertools.setup'],
-    version     = '0.0.4',
+    version     = '0.0.5',
     description = __doc__,
     license     = "MIT License",
 
