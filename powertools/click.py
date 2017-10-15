@@ -79,7 +79,7 @@ class Context(click.Context):
                         self.obj = result
                     def process_teardown(*a, **kw):
                         try:
-                            real_callback.send((a, kw))
+                            real_callback.send(a)
                         except StopIteration as e:
                             return e.value
                     cmd.result_callback = process_teardown
