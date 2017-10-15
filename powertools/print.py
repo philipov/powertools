@@ -4,6 +4,8 @@
 pretty print functions
 '''
 
+from . import term
+
 #-------------------------------------------------------------------------------------------------#
 
 from pprint import PrettyPrinter
@@ -28,6 +30,9 @@ def dictprint( d, pfunc=print ) :
 def listprint( l, pfunc=print ) :
     list( pfunc( value ) for value in l )
 
+
+key_color = term.dwhite
+value_color = term.dyellow
 def rprint( struct, i=0, quiet=False, pfunc=print ) :
     #ToDo: return a string
 
@@ -41,13 +46,13 @@ def rprint( struct, i=0, quiet=False, pfunc=print ) :
                 result += rprint( value, i + 2, quiet )
 
             else :
-                line = ' '*i + "- " + str( value )
+                line = ' '*i + "- " + value_color(str(value))
                 result += line + "\n"
                 pfunc( line ) if quiet is False else None
 
     elif isinstance( struct, dict ) : # loop over dict
         for (key, value) in struct.items( ) :
-            line = ' '*i + "{:<12} ".format(str(key)+':')
+            line = ' '*i + key_color(f"{str(key)+':':<12} ")
             result += line
             pfunc( line, end='' ) if quiet is False else None
 
@@ -59,7 +64,7 @@ def rprint( struct, i=0, quiet=False, pfunc=print ) :
                 result += rprint( value, i + 2, quiet )
 
             else :
-                result += str( value ) + "\n"
+                result += value_color(str(value)) + "\n"
                 pfunc( str( value ) ) if quiet is False else None
 
     return result

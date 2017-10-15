@@ -1,7 +1,7 @@
 #-- powertools.__init__
 
-"""--- power.tools and power.test
-general-purpose utility and testing library
+"""--- powertools
+    with additional batteries
 """
 
 #----------------------------------------------------------------------------------------------#

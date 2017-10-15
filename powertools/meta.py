@@ -6,6 +6,8 @@ higher order functions
 
 # todo: decorator that adds local variables in a function call as attributes of its object
 
+# todo: set up a thread to watch a stack frame and execute a callback when the frame exits.
+
 # import sys
 # from pprint import pprint
 # import traceback

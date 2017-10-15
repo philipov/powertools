@@ -39,11 +39,10 @@ levels = dict(
     DEBUG   =10,
 )
 
-
-#-------------------------------------------------------------------------------------------------#
-
 loggers = lambda: map( logging.getLogger, logging.Logger.manager.loggerDict )
 
+
+#-------------------------------------------------------------------------------------------------#
 
 @export
 class AutoLogger :
@@ -64,7 +63,7 @@ class AutoLogger :
 
         coloredlogs.install(logger=self.logger, fmt='%(message)s', level=logging.DEBUG)
 
-
+    #################
     def _print( self, loglevel, *args, stackpop=0, add_indent=False, clean=False, **kwargs) :
         # print('self', self)
         stackdepth  = len(getouterframes( currentframe())) - stackpop - self._base_depth
@@ -90,6 +89,7 @@ class AutoLogger :
             ]),
         **kwargs)
 
+    #################
     critical    = partialmethod( _print, 'FATAL')
     error       = partialmethod( _print, 'ERROR' )
     warn        = partialmethod( _print, 'WARNING' )
@@ -98,19 +98,27 @@ class AutoLogger :
     info        = partialmethod( _print, 'INFO' )
     dinfo       = partialmethod( _print, 'INFO', add_indent=True )
     debug       = partialmethod( _print, 'DEBUG', add_indent=True )
+    dprint      = partialmethod( _print, 'DEBUG', clean=True )
 
+    #################
+    @staticmethod
+    def setWarning():
+        for logger in loggers() :
+            logger.setLevel( logging.WARNING )
 
-    def setDebug(self, level):
+    @staticmethod
+    def setDebug():
         for logger in loggers() :
             logger.setLevel( logging.DEBUG )
 
-    def setInfo( self, level ) :
+    @staticmethod
+    def setInfo() :
         for logger in loggers() :
             logger.setLevel( logging.INFO )
 
     #################
     class _setdebug:
-        ''' temporarily enable debug messages for all loggers during context
+        ''' temporarily enable debug messages for all loggers during scope
         '''
         def __init__(self, logger):
             self.logger = logger

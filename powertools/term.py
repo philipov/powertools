@@ -5,6 +5,7 @@ terminal colors
 
 from termcolor import colored
 from functools import partial
+from contextlib import suppress
 
 #----------------------------------------------------------------------------------------------#
 
@@ -16,7 +17,7 @@ cprint = lambda color, *args, bold=True,: (
 )
 
 
-################################
+###################################################
 white   = partial( cprint, 'white',     bold=True )
 red     = partial( cprint, 'red',       bold=True )
 green   = partial( cprint, 'green',     bold=True )
@@ -41,12 +42,22 @@ def init_color():
         only call this inside functions to prevent configuration bleed during module import
     '''
     ### enable color on windows
-    import colorama
-    colorama.init()
+    with suppress(ImportError):
+        import colorama
+        colorama.init()
 
     ###
     import colored_traceback
     colored_traceback.add_hook( style='dark' )
+
+
+#----------------------------------------------------------------------------------------------#
+
+def c( input_string:str ) -> str:
+    ''' convert custom colorization syntax to ansi color terminal codes '''
+    result = input_string
+    raise NotImplementedError
+    return result
 
 
 #----------------------------------------------------------------------------------------------#
