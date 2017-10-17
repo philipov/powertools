@@ -64,3 +64,33 @@ def assertion(exception:Exception):
 
 
 #----------------------------------------------------------------------------------------------#
+
+class ComposableFunction:
+    __slots__ = ('func',)
+
+    def __init__(self, func):
+        if isinstance(func, ComposableFunction):
+            self.func = func.func
+        else:
+            self.func = func
+
+    def __or__(self, right):
+        return ComposableFunction(
+            lambda *a, **kw:
+                ComposableFunction(right).func(
+                    ComposableFunction(self).func(
+                        *a,**kw
+                    )
+                )
+            )
+
+    def ror(self, left):
+        return type(self).__or__(left, self)
+
+    def __call__(self, *args, **kwargs):
+        return self.func(*args, **kwargs)
+
+def composable(f):
+    return ComposableFunction(f)
+
+#----------------------------------------------------------------------------------------------#

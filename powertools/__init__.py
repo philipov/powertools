@@ -16,7 +16,8 @@ from .std import name, qualname         # functions
 
 from .struct import GreedyOrderedSet    # data structure
 
-from .meta import classproperty         # decorator
+from .meta import classproperty         # wrapper decorator
+from .meta import composable            # wrapper decorator
 from .meta import assertion             # context manager
 
 from .logging import AutoLogger         # module utility class

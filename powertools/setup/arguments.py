@@ -47,8 +47,8 @@ kwargs = dict(
     ]
 )
 
-test_kwargs   = deepcopy( kwargs )
-dev_kwargs    = deepcopy( test_kwargs )
+test_kwargs = deepcopy( kwargs )
+dev_kwargs  = deepcopy( test_kwargs )
 
 __version__ = kwargs['version']
 
